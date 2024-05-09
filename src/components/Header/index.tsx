@@ -7,6 +7,9 @@ const Header = () => {
           Tran<span className="text-[#0079ea]">Scribe</span>
         </h1>
       </div>
+      <section className="h-7 w-12 relative rounded-full bg-[#0079ea]">
+        <div className="absolute h-5 w-5 bg-white rounded-full top-1 left-1"></div>
+      </section>
     </header>
   );
 };
