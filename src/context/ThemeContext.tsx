@@ -1,12 +1,8 @@
 import React, { createContext, useState, useContext } from "react";
 
-type Theme = {
-  mode: "light" | "dark";
-};
-
 type ThemeContextType = {
-  theme: Theme;
-  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+  theme: boolean;
+  setTheme: React.Dispatch<React.SetStateAction<boolean>>;
   handleChangeTheme: () => void;
 };
 
@@ -21,14 +17,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }: UserProviderProps) => {
-  const [theme, setTheme] = useState<Theme>({ mode: "light" });
+  const [theme, setTheme] = useState(false);
 
   const handleChangeTheme = (): void => {
-    setTheme(
-      document.documentElement.classList.toggle("dark")
-        ? { mode: "dark" }
-        : { mode: "light" }
-    );
+    setTheme(document.documentElement.classList.toggle("dark"));
   };
   return (
     <ThemeContext.Provider value={{ theme, setTheme, handleChangeTheme }}>
