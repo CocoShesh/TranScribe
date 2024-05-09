@@ -1,7 +1,6 @@
-import React from "react";
 import { useTheme } from "../../context/ThemeContext";
 
-const Header: React.FC = () => {
+const Header = () => {
   const { handleChangeTheme, theme } = useTheme();
   return (
     <header className="flex items-center justify-between px-5 w-full  2xl:w-[1500px]">
