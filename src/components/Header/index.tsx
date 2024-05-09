@@ -10,9 +10,6 @@ const Header = () => {
           alt="Logo"
           className="h-20 w-20"
         />
-        <h1 className="text-[#183153] dark:text-white font-bold text-3xl">
-          Tran<span className="text-[#0079ea] ">Scribe</span>
-        </h1>
       </div>
       <section className="h-7 w-12 relative rounded-full bg-[#0079ea]">
         <div
