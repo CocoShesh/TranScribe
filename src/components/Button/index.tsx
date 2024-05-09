@@ -33,7 +33,13 @@ const index = () => {
           <FaArrowRight className="text-[#0079ea]" />
           <span className="text-lg">Translate</span>
         </section>
-        {isStartRecord ? (
+        {!browserSupportsSpeechRecognition ? (
+          <div className="w-[400px] mt-5 text-center text-red-500">
+            Browser doesn't support speech recognition. Sorry for the
+            inconvenience. Soon I will implement cross-browser support, but for
+            now, try another browser.
+          </div>
+        ) : isStartRecord ? (
           <div
             onClick={stopRecording}
             className="flex items-center w-[400px] cursor-pointer border hover:shadow hover:shadow-[#18315391] p-3 rounded-lg justify-between"
@@ -52,13 +58,6 @@ const index = () => {
               Record
             </h1>
             <FaMicrophoneAlt />
-          </div>
-        )}
-        {!browserSupportsSpeechRecognition && (
-          <div className="w-[400px] mt-5 text-center">
-            Browser doesn't support speech recognition. Sorry for the
-            inconvenience. Soon I will implement cross-browser support, but for
-            now, try another browser.
           </div>
         )}
       </section>
