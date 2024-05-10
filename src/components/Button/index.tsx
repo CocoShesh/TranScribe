@@ -5,10 +5,11 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 
 import { FaMicrophoneAlt, FaArrowRight } from "react-icons/fa";
-const index = () => {
+const Button = () => {
   const [isStartRecord, setIsStartRecord] = useState(false);
+  const [transcript, setTranscript] = useState("");
 
-  const { transcript, browserSupportsSpeechRecognition } =
+  const { browserSupportsSpeechRecognition, transcript: currentTranscript } =
     useSpeechRecognition();
 
   const startRecording = () => {
@@ -19,14 +20,16 @@ const index = () => {
   const stopRecording = () => {
     SpeechRecognition.stopListening();
     setIsStartRecord(false);
+    setTranscript(currentTranscript);
   };
+
   return (
     <>
-      <section className="h-screen w-full flex flex-col  gap-5  mt-32 items-center dark:text-white">
+      <section className="h-screen w-full flex flex-col gap-5 mt-32 items-center dark:text-white">
         <h1 className="text-[#183153] dark:text-white font-bold text-5xl">
           Tran<span className="text-[#0079ea] ">Scribe</span>
         </h1>
-        <section className="flex items-center gap-3   font-semibold">
+        <section className="flex items-center gap-3 font-semibold">
           <span className="text-lg">Record</span>
           <FaArrowRight className="text-[#0079ea]" />
           <span className="text-lg">Transcribe</span>
@@ -60,9 +63,14 @@ const index = () => {
             <FaMicrophoneAlt />
           </div>
         )}
+        {transcript && (
+          <div className="mt-5 text-center text-lg">
+            Transcript: {transcript}
+          </div>
+        )}
       </section>
     </>
   );
 };
 
-export default index;
+export default Button;
