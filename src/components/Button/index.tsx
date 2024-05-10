@@ -3,8 +3,8 @@ import "regenerator-runtime/runtime";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-
 import { FaMicrophoneAlt, FaArrowRight } from "react-icons/fa";
+
 const Button = () => {
   const [isStartRecord, setIsStartRecord] = useState(false);
   const [transcript, setTranscript] = useState("");
