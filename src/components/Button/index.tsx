@@ -4,6 +4,7 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { FaMicrophoneAlt, FaArrowRight } from "react-icons/fa";
+import Transcript from "../Transcript";
 
 const Button = () => {
   const [isStartRecord, setIsStartRecord] = useState(false);
@@ -53,9 +54,7 @@ const Button = () => {
             <FaMicrophoneAlt />
           </div>
         ) : transcript ? (
-          <div className="mt-5 text-center text-lg">
-            Transcript: {transcript}
-          </div>
+          <Transcript transcript={transcript} />
         ) : (
           <div
             onClick={startRecording}
