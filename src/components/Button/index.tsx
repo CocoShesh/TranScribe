@@ -52,6 +52,10 @@ const Button = () => {
             </h1>
             <FaMicrophoneAlt />
           </div>
+        ) : transcript ? (
+          <div className="mt-5 text-center text-lg">
+            Transcript: {transcript}
+          </div>
         ) : (
           <div
             onClick={startRecording}
@@ -61,11 +65,6 @@ const Button = () => {
               Record
             </h1>
             <FaMicrophoneAlt />
-          </div>
-        )}
-        {transcript && (
-          <div className="mt-5 text-center text-lg">
-            Transcript: {transcript}
           </div>
         )}
       </section>
