@@ -17,6 +17,9 @@ dependencies:
   react-speech-recognition:
     specifier: ^3.10.0
     version: 3.10.0(react@18.3.1)
+  react-translate:
+    specifier: ^7.0.1
+    version: 7.0.1(react@18.3.1)
   regenerator-runtime:
     specifier: ^0.14.1
     version: 0.14.1
@@ -1629,6 +1632,12 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: true
 
+  /invariant@2.2.4:
+    resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
+
   /is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
@@ -2057,6 +2066,15 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
+      react: 18.3.1
+    dev: false
+
+  /react-translate@7.0.1(react@18.3.1):
+    resolution: {integrity: sha512-YHKsjj3+3qy6i/lY463I/B1BY5iNc57In/B6pKNiqVYps95mZNTeFIpJAS8M6AmfwLxuHpmrNdI0pvde6jA7Ug==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      invariant: 2.2.4
       react: 18.3.1
     dev: false
 
