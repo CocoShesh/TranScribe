@@ -5,7 +5,6 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import { FaMicrophoneAlt, FaArrowRight } from "react-icons/fa";
 import Transcript from "../Transcript";
-
 const Button = () => {
   const [isStartRecord, setIsStartRecord] = useState(false);
   const [transcript, setTranscript] = useState("");
@@ -26,7 +25,7 @@ const Button = () => {
 
   return (
     <>
-      <section className="h-screen w-full flex flex-col gap-5 mt-32 items-center dark:text-white">
+      <section className="h-screen w-full flex flex-col gap-5 mt-28 items-center dark:text-white">
         <h1 className="text-[#183153] dark:text-white font-bold text-5xl">
           Tran<span className="text-[#0079ea] ">Scribe</span>
         </h1>
