@@ -22,7 +22,7 @@ const Transcript = ({ transcript }: TranscriptProps) => {
 
   return (
     <>
-      <section className="mt-3 flex flex-col text-center w-[500px] h-[300px]">
+      <section className="mt-3 flex flex-col text-center w-[500px] h-[300px] px-5 max-sm:w-full">
         {isTranscriptionView ? (
           <h1 className="font-bold text-2xl text-[#183153] dark:text-white">
             Your Transcription
