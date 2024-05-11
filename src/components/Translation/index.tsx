@@ -9,7 +9,7 @@ interface Language {
 interface languageProps {
   selectedLanguage: string;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>>;
-  translate: any[];
+  translation: any[];
 }
 
 const languages: Language[] = [
@@ -28,7 +28,7 @@ const languages: Language[] = [
 const Translation = ({
   selectedLanguage,
   setSelectedLanguage,
-  translate,
+  translation,
 }: languageProps) => {
   const handleSelectedLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedLanguage(e.target.value);
@@ -55,7 +55,7 @@ const Translation = ({
           </select>
         </section>
         <section className="h-[200px] flex items-center justify-center">
-          {translate.map((item, index) => {
+          {translation.map((item, index) => {
             return <div key={index}>{item.translations[0].text}</div>;
           })}
         </section>
