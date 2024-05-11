@@ -8,7 +8,8 @@ type TranscriptProps = {
 const Transcript = ({ transcript }: TranscriptProps) => {
   const [isTranscriptionView, setIsTranscriptionView] = useState<boolean>(true);
   const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
-  const [translation, setTranslation] = useState<object>([]);
+  const [translation, setTranslation] = useState<any[]>([]);
+
   const toggleView = (): void => {
     setIsTranscriptionView(!isTranscriptionView);
   };
@@ -62,7 +63,7 @@ const Transcript = ({ transcript }: TranscriptProps) => {
             <Translation
               setSelectedLanguage={setSelectedLanguage}
               selectedLanguage={selectedLanguage}
-              translate={translation}
+              translation={translation}
             />
           )}
         </p>
