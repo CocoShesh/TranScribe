@@ -18,7 +18,7 @@ const Transcript = ({ transcript }: TranscriptProps) => {
     Translate({ text: transcript, target: selectedLanguage }).then(data => {
       setTranslation(data);
     });
-  }, [transcript, selectedLanguage, translation]);
+  }, [transcript, selectedLanguage, setTranslation]);
 
   return (
     <>
