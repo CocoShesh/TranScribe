@@ -9,13 +9,14 @@ interface Language {
 interface languageProps {
   selectedLanguage: string;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>>;
+  translate: any[];
 }
 
 const languages: Language[] = [
   {
     id: 1,
     name: "Tagalog",
-    code: "ta",
+    code: "fil",
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const languages: Language[] = [
 const Translation = ({
   selectedLanguage,
   setSelectedLanguage,
+  translate,
 }: languageProps) => {
   const handleSelectedLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedLanguage(e.target.value);
@@ -34,22 +36,29 @@ const Translation = ({
 
   return (
     <>
-      <section className="flex items-center justify-between w-full px-3 text-xl">
-        <h1>Translation</h1>
+      <section className="flex flex-col items-center h-full w-full px-3 text-xl">
+        <section className="flex justify-between  w-full items-center">
+          <h1>Translation</h1>
 
-        <select
-          name="language"
-          id="language"
-          className="w-[200px] h-10 border px-3"
-          value={selectedLanguage}
-          onChange={handleSelectedLanguage}
-        >
-          {languages.map(language => (
-            <option key={language.id} value={language.code}>
-              {language.name}
-            </option>
-          ))}
-        </select>
+          <select
+            name="language"
+            id="language"
+            className="w-[200px] h-10 border px-3"
+            value={selectedLanguage}
+            onChange={handleSelectedLanguage}
+          >
+            {languages.map(language => (
+              <option key={language.id} value={language.code}>
+                {language.name}
+              </option>
+            ))}
+          </select>
+        </section>
+        <section className="h-[200px] flex items-center justify-center">
+          {translate.map((item, index) => {
+            return <div key={index}>{item.translations[0].text}</div>;
+          })}
+        </section>
       </section>
     </>
   );
