@@ -43,12 +43,16 @@ const Translation = ({
           <select
             name="language"
             id="language"
-            className="w-[200px] h-10 border px-3"
+            className="w-[200px] h-10 border px-3 dark:bg-transparent  dark:text-white border-none outline-none"
             value={selectedLanguage}
             onChange={handleSelectedLanguage}
           >
             {languages.map(language => (
-              <option key={language.id} value={language.code}>
+              <option
+                key={language.id}
+                value={language.code}
+                className="bg-[#183153]"
+              >
                 {language.name}
               </option>
             ))}
