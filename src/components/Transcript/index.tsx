@@ -1,12 +1,13 @@
 import { useState } from "react";
-
+// import { Translate } from "../../api/Translator";
+import Translation from "../Translation";
 type TranscriptProps = {
   transcript: string;
 };
 
 const Transcript = ({ transcript }: TranscriptProps) => {
   const [isTranscriptionView, setIsTranscriptionView] = useState<boolean>(true);
-
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
   const toggleView = (): void => {
     setIsTranscriptionView(!isTranscriptionView);
   };
@@ -48,7 +49,14 @@ const Transcript = ({ transcript }: TranscriptProps) => {
           </section>
         </section>
         <p className="mt-10">
-          {isTranscriptionView ? "Transcription" : "Translation"}: {transcript}
+          {isTranscriptionView ? (
+            `Transcription : ${transcript}`
+          ) : (
+            <Translation
+              setSelectedLanguage={setSelectedLanguage}
+              selectedLanguage={selectedLanguage}
+            />
+          )}
         </p>
       </section>
     </>
