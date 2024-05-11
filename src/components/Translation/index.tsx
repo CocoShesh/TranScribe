@@ -51,7 +51,7 @@ const Translation = ({
               <option
                 key={language.id}
                 value={language.code}
-                className="bg-[#183153]"
+                className="dark:bg-[#183153] "
               >
                 {language.name}
               </option>
