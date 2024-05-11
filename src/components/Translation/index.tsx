@@ -36,8 +36,8 @@ const Translation = ({
 
   return (
     <>
-      <section className="flex flex-col items-center h-full w-full px-3 text-xl">
-        <section className="flex justify-between  w-full items-center">
+      <section className="flex flex-col  gap-10 h-full w-full px-3 text-xl">
+        <section className="flex justify-between  h-[100px] w-full items-center">
           <h1>Translation</h1>
 
           <select
@@ -58,7 +58,7 @@ const Translation = ({
             ))}
           </select>
         </section>
-        <section className="h-[200px] flex items-center justify-center">
+        <section className="h-full text-justify pb-10 flex items-center justify-center">
           {translation.map((item, index) => {
             return <div key={index}>{item.translations[0].text}</div>;
           })}
