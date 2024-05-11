@@ -5,6 +5,7 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import { FaMicrophoneAlt, FaArrowRight } from "react-icons/fa";
 import Transcript from "../Transcript";
+
 const Button = () => {
   const [isStartRecord, setIsStartRecord] = useState<Boolean>(false);
   const [transcript, setTranscript] = useState<string>("");
