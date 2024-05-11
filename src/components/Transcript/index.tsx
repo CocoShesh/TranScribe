@@ -7,7 +7,7 @@ type TranscriptProps = {
 const Transcript = ({ transcript }: TranscriptProps) => {
   const [isTranscriptionView, setIsTranscriptionView] = useState<boolean>(true);
 
-  const toggleView = () => {
+  const toggleView = (): void => {
     setIsTranscriptionView(!isTranscriptionView);
   };
 
