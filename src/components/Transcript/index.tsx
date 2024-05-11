@@ -1,5 +1,5 @@
-import { useState } from "react";
-// import { Translate } from "../../api/Translator";
+import { useEffect, useState } from "react";
+import { Translate } from "../../api/Translator";
 import Translation from "../Translation";
 type TranscriptProps = {
   transcript: string;
@@ -8,9 +8,16 @@ type TranscriptProps = {
 const Transcript = ({ transcript }: TranscriptProps) => {
   const [isTranscriptionView, setIsTranscriptionView] = useState<boolean>(true);
   const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
+  const [translation, setTranslation] = useState<object>([]);
   const toggleView = (): void => {
     setIsTranscriptionView(!isTranscriptionView);
   };
+
+  useEffect(() => {
+    Translate({ text: transcript, target: selectedLanguage }).then(data => {
+      setTranslation(data);
+    });
+  }, [transcript, selectedLanguage]);
 
   return (
     <>
@@ -55,6 +62,7 @@ const Transcript = ({ transcript }: TranscriptProps) => {
             <Translation
               setSelectedLanguage={setSelectedLanguage}
               selectedLanguage={selectedLanguage}
+              translate={translation}
             />
           )}
         </p>
