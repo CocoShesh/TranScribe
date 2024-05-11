@@ -6,18 +6,18 @@ import SpeechRecognition, {
 import { FaMicrophoneAlt, FaArrowRight } from "react-icons/fa";
 import Transcript from "../Transcript";
 const Button = () => {
-  const [isStartRecord, setIsStartRecord] = useState(false);
-  const [transcript, setTranscript] = useState("");
+  const [isStartRecord, setIsStartRecord] = useState<Boolean>(false);
+  const [transcript, setTranscript] = useState<string>("");
 
   const { browserSupportsSpeechRecognition, transcript: currentTranscript } =
     useSpeechRecognition();
 
-  const startRecording = () => {
+  const startRecording = (): void => {
     SpeechRecognition.startListening({ continuous: true });
     setIsStartRecord(true);
   };
 
-  const stopRecording = () => {
+  const stopRecording = (): void => {
     SpeechRecognition.stopListening();
     setIsStartRecord(false);
     setTranscript(currentTranscript);
