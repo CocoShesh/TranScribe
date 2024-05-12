@@ -1,29 +1,10 @@
 import React from "react";
 
-interface Language {
-  id: number;
-  name: string;
-  code: string;
-}
-
 interface languageProps {
   selectedLanguage: string;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>>;
   translation: any[];
 }
-
-const languages: Language[] = [
-  {
-    id: 1,
-    name: "Tagalog",
-    code: "fil",
-  },
-  {
-    id: 2,
-    name: "English",
-    code: "en",
-  },
-];
 
 const Translation = ({
   selectedLanguage,
