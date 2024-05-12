@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Translate } from "../../api/Translator";
+import { FaRegCopy } from "react-icons/fa6";
+import { IoMdDownload } from "react-icons/io";
 import Translation from "../Translation";
 type TranscriptProps = {
   transcript: string;
@@ -7,7 +9,7 @@ type TranscriptProps = {
 
 const Transcript = ({ transcript }: TranscriptProps) => {
   const [isTranscriptionView, setIsTranscriptionView] = useState<boolean>(true);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("fil");
   const [translation, setTranslation] = useState<any[]>([]);
 
   const toggleView = (): void => {
@@ -20,6 +22,16 @@ const Transcript = ({ transcript }: TranscriptProps) => {
     });
   }, [transcript, selectedLanguage, setTranslation]);
 
+  const countWords = (count: string) => {
+    if (count.length === 0) {
+      return 0;
+    } else {
+      count = count.replace(/(^\s*)|(\s*$)/gi, "");
+      count = count.replace(/[ ]{2,}/gi, " ");
+      count = count.replace(/\n /, "\n");
+      return count.split(" ").length;
+    }
+  };
   return (
     <>
       <section className="mt-3 flex flex-col text-center w-[500px] h-[300px] px-5 max-sm:w-full">
@@ -58,7 +70,16 @@ const Transcript = ({ transcript }: TranscriptProps) => {
         </section>
         <p className="mt-10">
           {isTranscriptionView ? (
-            `Transcription : ${transcript}`
+            <section className="flex  gap-5 text-2xl flex-col">
+              <p className="select-none">{transcript} </p>
+              <section className="flex  w-full justify-between  ">
+                {countWords(transcript)} Words
+                <section className="flex gap-3">
+                  <IoMdDownload className="cursor-pointer" />
+                  <FaRegCopy className="cursor-pointer" />
+                </section>
+              </section>
+            </section>
           ) : (
             <Translation
               setSelectedLanguage={setSelectedLanguage}
