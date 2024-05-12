@@ -1,5 +1,8 @@
 import React from "react";
 import { languages } from "../../utils/Data";
+import { countWords } from "../../utils/WordUtils";
+import { FaRegCopy } from "react-icons/fa6";
+import { IoMdDownload } from "react-icons/io";
 interface languageProps {
   selectedLanguage: string;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>>;
@@ -15,16 +18,19 @@ const Translation = ({
     setSelectedLanguage(e.target.value);
   };
 
+  const totalWordCount = translation.reduce(
+    (acc, item) => acc + countWords(item.translations[0].text),
+    0
+  );
+
   return (
     <>
-      <section className="flex flex-col  gap-10 h-full w-full px-3 text-xl">
-        <section className="flex justify-between  h-[100px] w-full items-center">
-          <h1>Translation</h1>
-
+      <section className="flex flex-col  gap-10 h-full w-full px-5 text-xl border-2 border-[#0079ea] rounded-lg ">
+        <section className="flex   h-[100px] w-full items-center">
           <select
             name="language"
             id="language"
-            className="w-[200px] h-10 border px-3 dark:bg-transparent  dark:text-white border-none outline-none"
+            className="w-[200px] h-10 ml-auto border px-5 dark:bg-transparent  dark:text-white border-none outline-none"
             value={selectedLanguage}
             onChange={handleSelectedLanguage}
           >
@@ -39,10 +45,13 @@ const Translation = ({
             ))}
           </select>
         </section>
-        <section className="h-full  pb-10 flex items-center justify-center">
+        <section className="h-full  pb-10 flex ">
           {translation.map((item, index) => {
             return <div key={index}>{item.translations[0].text}</div>;
           })}
+        </section>
+        <section>
+          <span> {totalWordCount} Words </span>
         </section>
       </section>
     </>
