@@ -5,7 +5,8 @@ This project is a TypeScript-based web application designed for transcribing aud
 
 ![Screenshot 2024-05-12 194943](https://github.com/CocoShesh/Transcribe/assets/110368170/8a4a8af6-4043-47e4-b3d4-46621ec8f8c5)
 ![Screenshot 2024-05-12 194959](https://github.com/CocoShesh/Transcribe/assets/110368170/23d3920d-d100-4c27-92a9-18c43771ce0f)
-![Screenshot 2024-05-12 195013](https://github.com/CocoShesh/Transcribe/assets/110368170/15d10aec-cb78-4114-b519-4f03784f6e6f)  
+![Screenshot 2024-05-12 195435](https://github.com/CocoShesh/Transcribe/assets/110368170/f833498d-7bcb-4302-81d4-9aa6778a9c4c)
+
 
 ## Features
 
