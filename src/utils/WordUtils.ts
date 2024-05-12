@@ -8,3 +8,7 @@ export const countWords = (count: string) => {
     return count.split(" ").length;
   }
 };
+
+export const copyText = (transcript: string): void => {
+  navigator.clipboard.writeText(transcript);
+};
