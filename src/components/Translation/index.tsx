@@ -1,6 +1,10 @@
 import React, { useMemo } from "react";
 import { languages } from "../../utils/Data";
-import { countWords, copyText } from "../../utils/WordUtils";
+import {
+  countWords,
+  copyText,
+  downloadTranscript,
+} from "../../utils/WordUtils";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 
@@ -33,11 +37,13 @@ const Translation = ({
       .map(item => item.translations[0].text)
       .join("\n");
     copyText(allTranslatedText);
+    downloadTranscript(allTranslatedText);
   };
+
   return (
     <>
-      <section className="flex flex-col  gap-10 h-full w-full p-5 text-xl border-2 border-[#0079ea] rounded-lg ">
-        <section className="flex   h-[100px] w-full items-center">
+      <section className="flex flex-col  gap-10 h-full w-full p-5 text-xl border-2   border-[#0079ea] rounded-lg ">
+        <section className="flex   h-[100px] w-full items-center    ">
           <select
             name="language"
             id="language"
@@ -64,7 +70,7 @@ const Translation = ({
         <section className="flex justify-between items-center">
           <span> {totalWordCount} Words </span>
           <section className="flex gap-3 ">
-            <IoMdDownload className="cursor-pointer" />
+            <IoMdDownload className="cursor-pointer" onClick={handleCopyText} />
             <FaRegCopy className="cursor-pointer" onClick={handleCopyText} />
           </section>
         </section>
