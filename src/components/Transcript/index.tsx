@@ -3,7 +3,7 @@ import { Translate } from "../../api/Translator";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 import Translation from "../Translation";
-import { countWords, handleCopyText } from "../../utils/WordUtils";
+import { countWords, copyText } from "../../utils/WordUtils";
 type TranscriptProps = {
   transcript: string;
 };
@@ -69,7 +69,7 @@ const Transcript = ({ transcript }: TranscriptProps) => {
                   <IoMdDownload className="cursor-pointer" />
                   <FaRegCopy
                     className="cursor-pointer"
-                    onClick={() => handleCopyText(transcript)}
+                    onClick={() => copyText(transcript)}
                   />
                 </section>
               </section>
