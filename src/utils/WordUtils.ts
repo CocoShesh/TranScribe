@@ -12,3 +12,12 @@ export const countWords = (count: string) => {
 export const copyText = (transcript: string): void => {
   navigator.clipboard.writeText(transcript);
 };
+
+export const downloadTranscript = (text: string) => {
+  const element = document.createElement("a");
+  const file = new Blob([text], { type: "text/plain" });
+  element.href = URL.createObjectURL(file);
+  element.download = "transcript.text";
+  document.body.appendChild(element);
+  element.click();
+};
