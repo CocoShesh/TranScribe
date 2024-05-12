@@ -3,7 +3,7 @@ import { useTheme } from "../../context/ThemeContext";
 const Header = () => {
   const { handleChangeTheme, theme } = useTheme();
   return (
-    <header className="flex items-center justify-between px-5 w-full  2xl:w-[1500px]">
+    <header className="flex items-center justify-between px-5 w-full max-sm:px-2  2xl:w-[1500px]">
       <div className="flex items-center gap-5">
         <img
           src={theme ? "/logo3.svg" : "/logo.png"}
