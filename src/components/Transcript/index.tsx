@@ -3,7 +3,7 @@ import { Translate } from "../../api/Translator";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 import Translation from "../Translation";
-import { countWords } from "../../utils/WordUtils";
+import { countWords, handleCopyText } from "../../utils/WordUtils";
 type TranscriptProps = {
   transcript: string;
 };
@@ -22,10 +22,6 @@ const Transcript = ({ transcript }: TranscriptProps) => {
       setTranslation(data);
     });
   }, [transcript, selectedLanguage, setTranslation]);
-
-  const handleCopyText = (): void => {
-    navigator.clipboard.writeText(transcript);
-  };
 
   return (
     <>
@@ -70,13 +66,10 @@ const Transcript = ({ transcript }: TranscriptProps) => {
               <section className="flex  w-full justify-between text-lg  ">
                 {countWords(transcript)} Words
                 <section className="flex gap-3 ">
-                  <IoMdDownload
-                    className="cursor-pointer"
-                    onClick={handleCopyText}
-                  />
+                  <IoMdDownload className="cursor-pointer" />
                   <FaRegCopy
                     className="cursor-pointer"
-                    onClick={handleCopyText}
+                    onClick={() => handleCopyText(transcript)}
                   />
                 </section>
               </section>
