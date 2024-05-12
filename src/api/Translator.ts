@@ -34,23 +34,3 @@ export const Translate = async ({ text, target }: QAProps): Promise<any> => {
     throw error;
   }
 };
-
-export const getLanguages = async (): Promise<any> => {
-  try {
-    const response: AxiosResponse = await axios.get(`${baseURL}/languages`, {
-      params: {
-        "api-version": "3.0",
-      },
-      headers: {
-        "Content-Type": "application/json",
-        "X-RapidAPI-Host": host,
-        "X-RapidAPI-Key": apiKey,
-      },
-    });
-
-    return response;
-  } catch (error) {
-    console.log("error", error);
-    throw error;
-  }
-};
