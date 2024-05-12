@@ -1,6 +1,6 @@
 import React from "react";
 import { languages } from "../../utils/Data";
-import { countWords } from "../../utils/WordUtils";
+import { countWords, handleCopyText } from "../../utils/WordUtils";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 interface languageProps {
