@@ -26,7 +26,7 @@ const Button = () => {
 
   return (
     <>
-      <section className="h-screen w-full flex flex-col gap-5 mt-28 items-center max-sm:px-3 dark:text-white">
+      <section className="h-screen w-full flex flex-col gap-5 mt-32 items-center  max-sm:px-3 dark:text-white">
         <h1 className="text-[#183153] dark:text-white font-bold text-5xl">
           Tran<span className="text-[#0079ea] ">Scribe</span>
         </h1>
