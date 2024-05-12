@@ -58,7 +58,7 @@ const Translation = ({
             ))}
           </select>
         </section>
-        <section className="h-full text-justify pb-10 flex items-center justify-center">
+        <section className="h-full  pb-10 flex items-center justify-center">
           {translation.map((item, index) => {
             return <div key={index}>{item.translations[0].text}</div>;
           })}
