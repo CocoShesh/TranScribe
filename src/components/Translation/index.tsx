@@ -1,4 +1,5 @@
 import React from "react";
+import { languages } from "../../utils/Data";
 interface languageProps {
   selectedLanguage: string;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>>;
