@@ -1,6 +1,6 @@
 import React from "react";
 import { languages } from "../../utils/Data";
-import { countWords, handleCopyText } from "../../utils/WordUtils";
+import { countWords, copyText } from "../../utils/WordUtils";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 interface languageProps {
@@ -17,6 +17,10 @@ const Translation = ({
   const handleSelectedLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedLanguage(e.target.value);
   };
+
+  const filteredTranslation = translation.map(item => {
+    return item.translations[0].text;
+  });
 
   const totalWordCount = translation.reduce(
     (acc, item) => acc + countWords(item.translations[0].text),
@@ -54,7 +58,10 @@ const Translation = ({
           <span> {totalWordCount} Words </span>
           <section className="flex gap-3 ">
             <IoMdDownload className="cursor-pointer" />
-            <FaRegCopy className="cursor-pointer" />
+            <FaRegCopy
+              className="cursor-pointer"
+              onClick={() => copyText(filteredTranslation)}
+            />
           </section>
         </section>
       </section>
