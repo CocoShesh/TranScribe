@@ -23,6 +23,10 @@ const Transcript = ({ transcript }: TranscriptProps) => {
     });
   }, [transcript, selectedLanguage, setTranslation]);
 
+  const handleCopyText = (): void => {
+    navigator.clipboard.writeText(transcript);
+  };
+
   return (
     <>
       <section className="mt-3 flex flex-col text-center w-[500px] h-[300px] px-5 max-sm:w-full">
@@ -66,8 +70,14 @@ const Transcript = ({ transcript }: TranscriptProps) => {
               <section className="flex  w-full justify-between text-lg  ">
                 {countWords(transcript)} Words
                 <section className="flex gap-3 ">
-                  <IoMdDownload className="cursor-pointer" />
-                  <FaRegCopy className="cursor-pointer" />
+                  <IoMdDownload
+                    className="cursor-pointer"
+                    onClick={handleCopyText}
+                  />
+                  <FaRegCopy
+                    className="cursor-pointer"
+                    onClick={handleCopyText}
+                  />
                 </section>
               </section>
             </section>
