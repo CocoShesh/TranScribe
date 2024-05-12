@@ -3,6 +3,7 @@ import { languages } from "../../utils/Data";
 import { countWords, copyText } from "../../utils/WordUtils";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
+
 interface languageProps {
   selectedLanguage: string;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>>;
