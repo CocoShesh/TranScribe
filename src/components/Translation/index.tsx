@@ -8,10 +8,16 @@ import {
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 
+export interface TranslationItem {
+  translations: {
+    text: string;
+  }[];
+}
+
 interface languageProps {
   selectedLanguage: string;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>>;
-  translation: any[];
+  translation: TranslationItem[];
 }
 
 const Translation = ({
@@ -41,7 +47,7 @@ const Translation = ({
 
   return (
     <>
-      <section className="flex flex-col  gap-10 h-full w-full p-5 text-xl border-2   border-[#0079ea] rounded-lg ">
+      <section className="flex flex-col  gap-10 h-full w-full p-5 text-xl border-2   border-[#183153] dark:border-white rounded-lg ">
         <section className="flex   h-[100px] w-full items-center    ">
           <select
             name="language"
