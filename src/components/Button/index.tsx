@@ -26,7 +26,7 @@ const Button = () => {
 
   return (
     <>
-      <section className="h-screen w-full flex flex-col gap-5 mt-28 items-center dark:text-white">
+      <section className="h-screen w-full flex flex-col gap-5 mt-28 items-center max-sm:px-3 dark:text-white">
         <h1 className="text-[#183153] dark:text-white font-bold text-5xl">
           Tran<span className="text-[#0079ea] ">Scribe</span>
         </h1>
@@ -47,7 +47,7 @@ const Button = () => {
         ) : isStartRecord ? (
           <div
             onClick={stopRecording}
-            className="flex items-center w-[400px] cursor-pointer border hover:shadow hover:shadow-[#18315391] p-3 rounded-lg justify-between"
+            className="flex items-center w-[400px]  max-sm:w-full   cursor-pointer border hover:shadow hover:shadow-[#18315391] p-3 rounded-lg justify-between"
           >
             <h1 className="text-[#183153]  dark:text-[#0079ea] font-semibold text-xl">
               Stop
@@ -59,7 +59,7 @@ const Button = () => {
         ) : (
           <div
             onClick={startRecording}
-            className="flex items-center w-[400px] cursor-pointer border hover:shadow hover:shadow-[#18315391] p-3 rounded-lg justify-between"
+            className="flex items-center w-[400px]  max-sm:w-full   cursor-pointer border hover:shadow hover:shadow-[#18315391] p-3 rounded-lg justify-between"
           >
             <h1 className="text-[#183153]  dark:text-[#0079ea] font-semibold text-xl">
               Record
