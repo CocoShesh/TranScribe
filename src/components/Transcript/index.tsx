@@ -3,7 +3,11 @@ import { Translate } from "../../api/Translator";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 import Translation from "../Translation";
-import { countWords, copyText } from "../../utils/WordUtils";
+import {
+  countWords,
+  copyText,
+  downloadTranscript,
+} from "../../utils/WordUtils";
 type TranscriptProps = {
   transcript: string;
 };
@@ -25,7 +29,7 @@ const Transcript = ({ transcript }: TranscriptProps) => {
 
   return (
     <>
-      <section className="mt-3 flex flex-col text-center w-[500px] h-[300px] px-5 max-sm:w-full">
+      <section className="mt-3 flex flex-col text-center w-[500px] h-fit px-5  pb-10   max-sm:w-full">
         {isTranscriptionView ? (
           <h1 className="font-bold text-2xl text-[#183153] dark:text-white">
             Your Transcription
@@ -61,12 +65,15 @@ const Transcript = ({ transcript }: TranscriptProps) => {
         </section>
         <p className="mt-10">
           {isTranscriptionView ? (
-            <section className="flex   justify-between gap-5 text-2xl text-left flex-col h-fit p-5 border-2 border-[#0079ea] rounded-lg">
+            <section className="flex   justify-between gap-5 text-2xl text-left flex-col h-fit p-5 border-2 mb-10 border-[#0079ea] rounded-lg">
               <p className="select-none">{transcript} </p>
               <section className="flex  w-full justify-between text-lg  ">
                 {countWords(transcript)} Words
                 <section className="flex gap-3 ">
-                  <IoMdDownload className="cursor-pointer" />
+                  <IoMdDownload
+                    className="cursor-pointer"
+                    onClick={() => downloadTranscript(transcript)}
+                  />
                   <FaRegCopy
                     className="cursor-pointer"
                     onClick={() => copyText(transcript)}
