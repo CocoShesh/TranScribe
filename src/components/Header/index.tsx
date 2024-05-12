@@ -15,6 +15,7 @@ const Header = () => {
               : "/images/Logo-For-DarkTheme.png"
           }
           alt="Logo"
+          loading="lazy"
           className="h-20 w-20"
         />
       </div>
