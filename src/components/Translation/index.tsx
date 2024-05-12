@@ -25,7 +25,7 @@ const Translation = ({
 
   return (
     <>
-      <section className="flex flex-col  gap-10 h-full w-full px-5 text-xl border-2 border-[#0079ea] rounded-lg ">
+      <section className="flex flex-col  gap-10 h-full w-full p-5 text-xl border-2 border-[#0079ea] rounded-lg ">
         <section className="flex   h-[100px] w-full items-center">
           <select
             name="language"
@@ -50,8 +50,12 @@ const Translation = ({
             return <div key={index}>{item.translations[0].text}</div>;
           })}
         </section>
-        <section>
+        <section className="flex justify-between items-center">
           <span> {totalWordCount} Words </span>
+          <section className="flex gap-3 ">
+            <IoMdDownload className="cursor-pointer" />
+            <FaRegCopy className="cursor-pointer" />
+          </section>
         </section>
       </section>
     </>
