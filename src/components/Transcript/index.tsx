@@ -61,7 +61,7 @@ const Transcript = ({ transcript }: TranscriptProps) => {
         </section>
         <p className="mt-10">
           {isTranscriptionView ? (
-            <section className="flex  justify-between gap-5 text-2xl text-left flex-col h-[200px] p-5 border-2 border-[#0079ea] rounded-lg">
+            <section className="flex   justify-between gap-5 text-2xl text-left flex-col h-fit p-5 border-2 border-[#0079ea] rounded-lg">
               <p className="select-none">{transcript} </p>
               <section className="flex  w-full justify-between text-lg  ">
                 {countWords(transcript)} Words
