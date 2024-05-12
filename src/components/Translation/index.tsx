@@ -19,11 +19,6 @@ const Translation = ({
     setSelectedLanguage(e.target.value);
   };
 
-  const filteredTranslation = useMemo(
-    () => translation.map(item => item.translations[0].text).filter(Boolean),
-    [translation]
-  );
-
   const totalWordCount = useMemo(
     () =>
       translation.reduce(
@@ -33,6 +28,12 @@ const Translation = ({
     [translation]
   );
 
+  const handleCopyText = () => {
+    const allTranslatedText = translation
+      .map(item => item.translations[0].text)
+      .join("\n");
+    copyText(allTranslatedText);
+  };
   return (
     <>
       <section className="flex flex-col  gap-10 h-full w-full p-5 text-xl border-2 border-[#0079ea] rounded-lg ">
@@ -64,10 +65,7 @@ const Translation = ({
           <span> {totalWordCount} Words </span>
           <section className="flex gap-3 ">
             <IoMdDownload className="cursor-pointer" />
-            <FaRegCopy
-              className="cursor-pointer"
-              onClick={() => copyText(filteredTranslation)}
-            />
+            <FaRegCopy className="cursor-pointer" onClick={handleCopyText} />
           </section>
         </section>
       </section>
