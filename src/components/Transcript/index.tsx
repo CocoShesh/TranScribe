@@ -8,6 +8,7 @@ import {
   copyText,
   downloadTranscript,
 } from "../../utils/WordUtils";
+
 type TranscriptProps = {
   transcript: string;
 };
