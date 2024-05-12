@@ -31,13 +31,12 @@ const Translation = ({
       ),
     [translation]
   );
+  const allTranslatedText = translation
+    .map(item => item.translations[0].text)
+    .join("\n");
 
   const handleCopyText = () => {
-    const allTranslatedText = translation
-      .map(item => item.translations[0].text)
-      .join("\n");
     copyText(allTranslatedText);
-    downloadTranscript(allTranslatedText);
   };
 
   return (
@@ -70,7 +69,10 @@ const Translation = ({
         <section className="flex justify-between items-center">
           <span> {totalWordCount} Words </span>
           <section className="flex gap-3 ">
-            <IoMdDownload className="cursor-pointer" onClick={handleCopyText} />
+            <IoMdDownload
+              className="cursor-pointer"
+              onClick={() => downloadTranscript(allTranslatedText)}
+            />
             <FaRegCopy className="cursor-pointer" onClick={handleCopyText} />
           </section>
         </section>
