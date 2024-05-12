@@ -9,7 +9,7 @@ const Header = () => {
     <header className="flex items-center justify-between px-5 w-full max-sm:px-2  2xl:w-[1500px]">
       <div className="flex items-center gap-5 w-full">
         <img
-          src={theme ? "/logo3.svg" : "/Logo-For-DarkTheme.png"}
+          src={theme ? "/Logo-For-LightTheme.svg" : "/Logo-For-DarkTheme.png"}
           alt="Logo"
           className="h-20 w-20"
         />
