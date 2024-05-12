@@ -3,8 +3,7 @@
 This project is a TypeScript-based web application designed for transcribing audio files into text and translating the transcribed text into different languages.
 
 
-![Uploading Screenshot 2024-05-13 004657.png…]()
-
+![Screenshot 2024-05-13 004657](https://github.com/CocoShesh/Transcribe/assets/110368170/f716c2ed-2bf7-4267-9908-d1b45875d536)
 
 
 ## Features
