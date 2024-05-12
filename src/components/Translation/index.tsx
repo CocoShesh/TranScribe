@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { languages } from "../../utils/Data";
 import { countWords, copyText } from "../../utils/WordUtils";
 import { FaRegCopy } from "react-icons/fa6";
@@ -18,13 +18,18 @@ const Translation = ({
     setSelectedLanguage(e.target.value);
   };
 
-  const filteredTranslation = translation.map(item => {
-    return item.translations[0].text;
-  });
+  const filteredTranslation = useMemo(
+    () => translation.map(item => item.translations[0].text).filter(Boolean),
+    [translation]
+  );
 
-  const totalWordCount = translation.reduce(
-    (acc, item) => acc + countWords(item.translations[0].text),
-    0
+  const totalWordCount = useMemo(
+    () =>
+      translation.reduce(
+        (acc, item) => acc + countWords(item.translations[0].text),
+        0
+      ),
+    [translation]
   );
 
   return (
