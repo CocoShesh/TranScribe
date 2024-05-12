@@ -7,7 +7,7 @@ import { FaMicrophoneAlt, FaArrowRight } from "react-icons/fa";
 import Transcript from "../Transcript";
 
 const Button = () => {
-  const [isStartRecord, setIsStartRecord] = useState<Boolean>(false);
+  const [isStartRecord, setIsStartRecord] = useState<boolean>(false);
   const [transcript, setTranscript] = useState<string>("");
 
   const { browserSupportsSpeechRecognition, transcript: currentTranscript } =
@@ -39,9 +39,10 @@ const Button = () => {
         </section>
         {!browserSupportsSpeechRecognition ? (
           <div className="w-[400px] mt-5 text-center text-red-500">
-            Browser doesn't support speech recognition. Sorry for the
-            inconvenience. Soon I will implement cross-browser support, but for
-            now, try another browser.
+            Sorry, the browser does not support speech recognition. I apologize
+            for the inconvenience. Cross-browser support will be implemented
+            soon, but currently, only Google Chrome and Microsoft Edge is
+            supported.
           </div>
         ) : isStartRecord ? (
           <div
