@@ -3,6 +3,7 @@ import { Translate } from "../../api/Translator";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdDownload } from "react-icons/io";
 import Translation from "../Translation";
+import { countWords } from "../../utils/WordUtils";
 type TranscriptProps = {
   transcript: string;
 };
@@ -22,16 +23,6 @@ const Transcript = ({ transcript }: TranscriptProps) => {
     });
   }, [transcript, selectedLanguage, setTranslation]);
 
-  const countWords = (count: string) => {
-    if (count.length === 0) {
-      return 0;
-    } else {
-      count = count.replace(/(^\s*)|(\s*$)/gi, "");
-      count = count.replace(/[ ]{2,}/gi, " ");
-      count = count.replace(/\n /, "\n");
-      return count.split(" ").length;
-    }
-  };
   return (
     <>
       <section className="mt-3 flex flex-col text-center w-[500px] h-[300px] px-5 max-sm:w-full">
