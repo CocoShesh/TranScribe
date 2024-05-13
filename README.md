@@ -1,7 +1,6 @@
 # TranScribe
 
-This project is a TypeScript-based web application designed for transcribing audio files into text and translating the transcribed text into different languages.
-
+I built this website using TypeScript to practice my skills. It's designed for transcribing audio to text and then translating the transcribed text into various languages.
 
 ![Screenshot 2024-05-13 004657](https://github.com/CocoShesh/Transcribe/assets/110368170/f716c2ed-2bf7-4267-9908-d1b45875d536)
 
